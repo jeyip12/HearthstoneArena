@@ -1,4 +1,13 @@
-.cards{
+#cards {
  display: flex;
- justify-content: center;   
+ justify-content: center;
+ flex-direction: row;
+}
+
+#list {
+  border: 5px solid silver;
+}
+
+img {
+    width: 90%;
 }
