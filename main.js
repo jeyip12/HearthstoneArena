@@ -4,8 +4,7 @@ let data;
 function getCardData() {
   if (!data) {
     data = $.ajax({
-      // url: 'https://omgvamp-hearthstone-v1.p.mashape.com/cards/qualities/Legendary?collectible=1',
-      url: 'https://omgvamp-hearthstone-v1.p.mashape.com/cards/qualities/Legendary?attack=4&collectible=1',
+      url: 'https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/Neutral?collectible=1',
       type: 'GET',
       dataType: 'json',
       beforeSend: (xhr) => {
@@ -27,22 +26,34 @@ function showRandomCard() {
 }
 
 function addCard1() {
-  const image = document.createElement('img');
-  $(image).attr('src', document.getElementById('card-image1').getAttribute('src'));
-  $(image).css('width', '20%');
-  document.getElementById('list').appendChild(image);
+  if (document.getElementById('list').childElementCount < 30) {
+    const image = document.createElement('img');
+    $(image).attr('src', document.getElementById('card-image1').getAttribute('src'));
+    $(image).css('width', '20%');
+    document.getElementById('list').appendChild(image);
+  } else {
+    alert('Warning: If you used this deck builder correctly, you\'re probably not be a good friend. Oh and your deck is done!');
+  }
 }
 function addCard2() {
-  const image = document.createElement('img');
-  $(image).attr('src', document.getElementById('card-image2').getAttribute('src'));
-  $(image).css('width', '20%');
-  document.getElementById('list').appendChild(image);
+  if (document.getElementById('list').childElementCount < 30) {
+    const image = document.createElement('img');
+    $(image).attr('src', document.getElementById('card-image2').getAttribute('src'));
+    $(image).css('width', '20%');
+    document.getElementById('list').appendChild(image);
+  } else {
+    alert('Warning: If you used this deck builder correctly, you\'re probably not be a good friend. Oh and your deck is done!');
+  }
 }
 function addCard3() {
-  const image = document.createElement('img');
-  $(image).attr('src', document.getElementById('card-image3').getAttribute('src'));
-  $(image).css('width', '20%');
-  document.getElementById('list').appendChild(image);
+  if (document.getElementById('list').childElementCount < 30) {
+    const image = document.createElement('img');
+    $(image).attr('src', document.getElementById('card-image3').getAttribute('src'));
+    $(image).css('width', '20%');
+    document.getElementById('list').appendChild(image);
+  } else {
+    alert('Warning: If you used this deck builder correctly, you\'re probably not be a good friend. Oh and your deck is done!');
+  }
 }
 
 // function flattenCards(data) {
@@ -54,7 +65,8 @@ function addCard3() {
 //     }
 //     return result;
 // }
-getCardData();
+
+// getCardData();
 
 $(document).ready(() => {
   getCardData()
@@ -63,6 +75,13 @@ $(document).ready(() => {
       // cards = flattenCards(data);
       showRandomCard();
     });
+  // getCardDataCheater()
+  //   .done((cheaterData) => {
+  //     cards = cheaterData;
+  //     // cards = flattenCards(data);
+  //     showRandomCard();
+  //   });
+  $('#nextCard').click(showRandomCard);
   document.getElementById('card-image1').addEventListener('click', addCard1);
   document.getElementById('card-image1').addEventListener('click', showRandomCard);
   document.getElementById('card-image2').addEventListener('click', addCard2);
