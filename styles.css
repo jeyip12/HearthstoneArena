@@ -1,15 +1,15 @@
-#cards {
+h2 {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-}
-#card-border {
-  border: 5px solid white;
+  color: white;
+  text-shadow: 3px 2px black;
+  font-family: 'VT323', monospace;
 }
 
 h1 {
   color: white;
   text-shadow: 3px 2px black;
+  font-family: 'VT323', monospace;
 }
 
 body {
@@ -18,6 +18,24 @@ body {
 
 img {
     width: auto;
+}
+
+#cheater {
+  background-color:#269;
+  border-color: #269;
+  outline: none;
+  width: 50px;
+  height: 50px;
+}
+
+#cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+  
+#card-border {
+  border: 5px solid white;
 }
 
 #list {
